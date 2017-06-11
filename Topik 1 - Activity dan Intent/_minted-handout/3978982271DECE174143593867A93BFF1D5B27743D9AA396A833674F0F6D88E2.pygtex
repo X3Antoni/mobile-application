@@ -1,0 +1,21 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{com.example.usingintent}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{android.app.Activity}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.content.Intent}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.os.Bundle}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.view.View}\PYG{o}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{MainActivity} \PYG{k+kd}{extends} \PYG{n}{Activity} \PYG{o}{\PYGZob{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{protected} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{Bundle} \PYG{n}{savedInstanceState}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onCreate}\PYG{o}{(}\PYG{n}{savedInstanceState}\PYG{o}{);}
+		\PYG{n}{setContentView}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{layout}\PYG{o}{.}\PYG{n+na}{activity\PYGZus{}main}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onClick}\PYG{o}{(}\PYG{n}{View} \PYG{n}{view}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{n}{startActivity}\PYG{o}{(}\PYG{k}{new} \PYG{n}{Intent}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}com.example.usingintent.SecondActivity\PYGZdq{}}\PYG{o}{));}
+	\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

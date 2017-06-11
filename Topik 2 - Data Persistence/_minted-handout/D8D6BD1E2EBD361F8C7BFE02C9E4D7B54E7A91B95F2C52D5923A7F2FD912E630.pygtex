@@ -1,0 +1,60 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}android.support.constraint.ConstraintLayout} \PYG{n+na}{xmlns:android=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/apk/res/android\PYGZdq{}}
+	\PYG{n+na}{xmlns:app=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/apk/res\PYGZhy{}auto\PYGZdq{}}
+	\PYG{n+na}{xmlns:tools=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/tools\PYGZdq{}}
+	\PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/activity\PYGZus{}main\PYGZdq{}}
+	\PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+	\PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+	\PYG{n+na}{tools:context=}\PYG{l+s}{\PYGZdq{}com.example.usingpreferences.MainActivity\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+
+	\PYG{n+nt}{\PYGZlt{}Button}
+		\PYG{n+na}{android:text=}\PYG{l+s}{\PYGZdq{}Load Preferences Screen\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}310dp\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/btnPreferences\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintLeft\PYGZus{}toLeftOf=}\PYG{l+s}{\PYGZdq{}@+id/activity\PYGZus{}main\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginStart=}\PYG{l+s}{\PYGZdq{}40dp\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintTop\PYGZus{}toTopOf=}\PYG{l+s}{\PYGZdq{}@+id/activity\PYGZus{}main\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginTop=}\PYG{l+s}{\PYGZdq{}16dp\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintRight\PYGZus{}toRightOf=}\PYG{l+s}{\PYGZdq{}@+id/activity\PYGZus{}main\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginEnd=}\PYG{l+s}{\PYGZdq{}16dp\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintBottom\PYGZus{}toBottomOf=}\PYG{l+s}{\PYGZdq{}@+id/activity\PYGZus{}main\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginBottom=}\PYG{l+s}{\PYGZdq{}16dp\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintVertical\PYGZus{}bias=}\PYG{l+s}{\PYGZdq{}0.0\PYGZdq{}}
+		\PYG{n+na}{android:onClick=}\PYG{l+s}{\PYGZdq{}onClickLoad\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginRight=}\PYG{l+s}{\PYGZdq{}16dp\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginLeft=}\PYG{l+s}{\PYGZdq{}40dp\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}Button}
+		\PYG{n+na}{android:text=}\PYG{l+s}{\PYGZdq{}Display Preferences Values\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}310dp\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/btnDisplayValues\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintLeft\PYGZus{}toLeftOf=}\PYG{l+s}{\PYGZdq{}@+id/btnPreferences\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintTop\PYGZus{}toBottomOf=}\PYG{l+s}{\PYGZdq{}@+id/btnPreferences\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginTop=}\PYG{l+s}{\PYGZdq{}16dp\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintRight\PYGZus{}toRightOf=}\PYG{l+s}{\PYGZdq{}@+id/btnPreferences\PYGZdq{}}
+		\PYG{n+na}{android:onClick=}\PYG{l+s}{\PYGZdq{}onClickDisplay\PYGZdq{}}\PYG{n+nt}{/\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}EditText}
+		\PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}310dp\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:inputType=}\PYG{l+s}{\PYGZdq{}textPersonName\PYGZdq{}}
+		\PYG{n+na}{android:ems=}\PYG{l+s}{\PYGZdq{}10\PYGZdq{}}
+		\PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/editText\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintLeft\PYGZus{}toLeftOf=}\PYG{l+s}{\PYGZdq{}@+id/btnPreferences\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintTop\PYGZus{}toBottomOf=}\PYG{l+s}{\PYGZdq{}@+id/btnDisplayValues\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginTop=}\PYG{l+s}{\PYGZdq{}16dp\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintRight\PYGZus{}toRightOf=}\PYG{l+s}{\PYGZdq{}@+id/btnPreferences\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}Button}
+		\PYG{n+na}{android:text=}\PYG{l+s}{\PYGZdq{}Modify Preferences Values\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}fill\PYGZus{}parent\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/btnModifyValues\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintLeft\PYGZus{}toLeftOf=}\PYG{l+s}{\PYGZdq{}@+id/btnDisplayValues\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintTop\PYGZus{}toBottomOf=}\PYG{l+s}{\PYGZdq{}@+id/editText\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginTop=}\PYG{l+s}{\PYGZdq{}16dp\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintRight\PYGZus{}toRightOf=}\PYG{l+s}{\PYGZdq{}@+id/btnDisplayValues\PYGZdq{}}
+		\PYG{n+na}{android:onClick=}\PYG{l+s}{\PYGZdq{}onClickModify\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+
+\PYG{n+nt}{\PYGZlt{}/android.support.constraint.ConstraintLayout\PYGZgt{}}
+\end{Verbatim}

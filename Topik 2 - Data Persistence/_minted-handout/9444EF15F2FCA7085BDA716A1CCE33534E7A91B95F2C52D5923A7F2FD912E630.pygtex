@@ -1,0 +1,35 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}PreferenceScreen}
+	\PYG{n+na}{xmlns:android=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/apk/res/android\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}PreferenceCategory} \PYG{n+na}{android:title=}\PYG{l+s}{\PYGZdq{}Category 1\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+		\PYG{n+nt}{\PYGZlt{}CheckBoxPreference}
+			\PYG{n+na}{android:title=}\PYG{l+s}{\PYGZdq{}Checkbox\PYGZdq{}}
+			\PYG{n+na}{android:defaultValue=}\PYG{l+s}{\PYGZdq{}false\PYGZdq{}}
+			\PYG{n+na}{android:summary=}\PYG{l+s}{\PYGZdq{}True or False\PYGZdq{}}
+			\PYG{n+na}{android:key=}\PYG{l+s}{\PYGZdq{}checkboxPref\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}/PreferenceCategory\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}PreferenceCategory} \PYG{n+na}{android:title=}\PYG{l+s}{\PYGZdq{}Category 2\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+		\PYG{n+nt}{\PYGZlt{}EditTextPreference}
+			\PYG{n+na}{android:hint=}\PYG{l+s}{\PYGZdq{}[Enter a string here]\PYGZdq{}}
+			\PYG{n+na}{android:summary=}\PYG{l+s}{\PYGZdq{}Enter a string\PYGZdq{}}
+			\PYG{n+na}{android:title=}\PYG{l+s}{\PYGZdq{}Edit Text\PYGZdq{}}
+			\PYG{n+na}{android:key=}\PYG{l+s}{\PYGZdq{}editTextPref\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+		\PYG{n+nt}{\PYGZlt{}RingtonePreference}
+			\PYG{n+na}{android:summary=}\PYG{l+s}{\PYGZdq{}Select a ringtone\PYGZdq{}}
+			\PYG{n+na}{android:title=}\PYG{l+s}{\PYGZdq{}Ringtones\PYGZdq{}}
+			\PYG{n+na}{android:key=}\PYG{l+s}{\PYGZdq{}ringtonePref\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+		\PYG{n+nt}{\PYGZlt{}PreferenceScreen}
+			\PYG{n+na}{android:title=}\PYG{l+s}{\PYGZdq{}Second Preference Screen\PYGZdq{}}
+			\PYG{n+na}{android:summary=}
+			\PYG{l+s}{\PYGZdq{}Click here to go to the second Preference Screen\PYGZdq{}}
+			\PYG{n+na}{android:key=}\PYG{l+s}{\PYGZdq{}secondPrefScreenPref\PYGZdq{}} \PYG{n+nt}{\PYGZgt{}}
+			\PYG{n+nt}{\PYGZlt{}EditTextPreference}
+			\PYG{n+na}{android:hint=}\PYG{l+s}{\PYGZdq{}[Enter a string here]\PYGZdq{}}
+			\PYG{n+na}{android:summary=}\PYG{l+s}{\PYGZdq{}Enter a string\PYGZdq{}}
+			\PYG{n+na}{android:title=}\PYG{l+s}{\PYGZdq{}Edit Text (second Screen)\PYGZdq{}}
+			\PYG{n+na}{android:key=}\PYG{l+s}{\PYGZdq{}secondEditTextPref\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+		\PYG{n+nt}{\PYGZlt{}/PreferenceScreen\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}/PreferenceCategory\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/PreferenceScreen\PYGZgt{}}
+\end{Verbatim}

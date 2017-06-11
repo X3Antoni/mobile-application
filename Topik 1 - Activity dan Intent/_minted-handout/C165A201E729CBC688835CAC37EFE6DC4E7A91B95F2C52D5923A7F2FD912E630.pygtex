@@ -1,0 +1,75 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}android.support.constraint.ConstraintLayout} \PYG{n+na}{xmlns:android=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/apk/res/android\PYGZdq{}}
+	\PYG{n+na}{xmlns:app=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/apk/res\PYGZhy{}auto\PYGZdq{}}
+	\PYG{n+na}{xmlns:tools=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/tools\PYGZdq{}}
+	\PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+	\PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}match\PYGZus{}parent\PYGZdq{}}
+	\PYG{n+na}{tools:context=}\PYG{l+s}{\PYGZdq{}com.example.usingintent.SecondActivity\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+
+	\PYG{n+nt}{\PYGZlt{}TextView}
+		\PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/textView2\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:text=}\PYG{l+s}{\PYGZdq{}Please enter your name\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintBottom\PYGZus{}toBottomOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintHorizontal\PYGZus{}bias=}\PYG{l+s}{\PYGZdq{}0.067\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintLeft\PYGZus{}toLeftOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintRight\PYGZus{}toRightOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintTop\PYGZus{}toTopOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintVertical\PYGZus{}bias=}\PYG{l+s}{\PYGZdq{}0.066\PYGZdq{}}
+		\PYG{n+na}{tools:layout\PYGZus{}constraintBottom\PYGZus{}creator=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}
+		\PYG{n+na}{tools:layout\PYGZus{}constraintLeft\PYGZus{}creator=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}
+		\PYG{n+na}{tools:layout\PYGZus{}constraintRight\PYGZus{}creator=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}
+		\PYG{n+na}{tools:layout\PYGZus{}constraintTop\PYGZus{}creator=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+
+	\PYG{n+nt}{\PYGZlt{}TextView}
+		\PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/textView3\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:text=}\PYG{l+s}{\PYGZdq{}This is the Second Activity!\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintLeft\PYGZus{}toLeftOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintTop\PYGZus{}toTopOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintBottom\PYGZus{}toBottomOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintRight\PYGZus{}toRightOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{tools:layout\PYGZus{}constraintTop\PYGZus{}creator=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}
+		\PYG{n+na}{tools:layout\PYGZus{}constraintRight\PYGZus{}creator=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}
+		\PYG{n+na}{tools:layout\PYGZus{}constraintBottom\PYGZus{}creator=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}
+		\PYG{n+na}{tools:layout\PYGZus{}constraintLeft\PYGZus{}creator=}\PYG{l+s}{\PYGZdq{}1\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintHorizontal\PYGZus{}bias=}\PYG{l+s}{\PYGZdq{}0.073\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintVertical\PYGZus{}bias=}\PYG{l+s}{\PYGZdq{}0.032\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+
+	\PYG{n+nt}{\PYGZlt{}EditText}
+		\PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/editText\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginLeft=}\PYG{l+s}{\PYGZdq{}16dp\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginRight=}\PYG{l+s}{\PYGZdq{}8dp\PYGZdq{}}
+		\PYG{n+na}{android:ems=}\PYG{l+s}{\PYGZdq{}10\PYGZdq{}}
+		\PYG{n+na}{android:hint=}\PYG{l+s}{\PYGZdq{}John Doe\PYGZdq{}}
+		\PYG{n+na}{android:inputType=}\PYG{l+s}{\PYGZdq{}textPersonName\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintBottom\PYGZus{}toBottomOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintHorizontal\PYGZus{}bias=}\PYG{l+s}{\PYGZdq{}0.0\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintLeft\PYGZus{}toLeftOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintRight\PYGZus{}toRightOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintTop\PYGZus{}toTopOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintVertical\PYGZus{}bias=}\PYG{l+s}{\PYGZdq{}0.106\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+
+	\PYG{n+nt}{\PYGZlt{}Button}
+		\PYG{n+na}{android:id=}\PYG{l+s}{\PYGZdq{}@+id/button2\PYGZdq{}}
+		\PYG{n+na}{android:onClick=}\PYG{l+s}{\PYGZdq{}onClick\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}width=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}height=}\PYG{l+s}{\PYGZdq{}wrap\PYGZus{}content\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginLeft=}\PYG{l+s}{\PYGZdq{}16dp\PYGZdq{}}
+		\PYG{n+na}{android:text=}\PYG{l+s}{\PYGZdq{}OK\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintLeft\PYGZus{}toLeftOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginRight=}\PYG{l+s}{\PYGZdq{}8dp\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintRight\PYGZus{}toRightOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintTop\PYGZus{}toTopOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginTop=}\PYG{l+s}{\PYGZdq{}8dp\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintBottom\PYGZus{}toBottomOf=}\PYG{l+s}{\PYGZdq{}parent\PYGZdq{}}
+		\PYG{n+na}{android:layout\PYGZus{}marginBottom=}\PYG{l+s}{\PYGZdq{}8dp\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintHorizontal\PYGZus{}bias=}\PYG{l+s}{\PYGZdq{}0.0\PYGZdq{}}
+		\PYG{n+na}{app:layout\PYGZus{}constraintVertical\PYGZus{}bias=}\PYG{l+s}{\PYGZdq{}0.19\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/android.support.constraint.ConstraintLayout\PYGZgt{}}
+\end{Verbatim}

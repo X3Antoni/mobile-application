@@ -1,0 +1,57 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{com.example.passingdata}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{android.content.Intent}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.net.Uri}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.os.Bundle}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.support.v7.app.AppCompatActivity}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.view.View}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.widget.Toast}\PYG{o}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{SecondActivity} \PYG{k+kd}{extends} \PYG{n}{AppCompatActivity} \PYG{o}{\PYGZob{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{protected} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{Bundle} \PYG{n}{savedInstanceState}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onCreate}\PYG{o}{(}\PYG{n}{savedInstanceState}\PYG{o}{);}
+		\PYG{n}{setContentView}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{layout}\PYG{o}{.}\PYG{n+na}{activity\PYGZus{}second}\PYG{o}{);}
+
+		\PYG{c+c1}{// get the data passed in using getStringExtra()}
+		\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{makeText}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,}\PYG{n}{getIntent}\PYG{o}{().}\PYG{n+na}{getStringExtra}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}str1\PYGZdq{}}\PYG{o}{),}
+		\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{LENGTH\PYGZus{}SHORT}\PYG{o}{).}\PYG{n+na}{show}\PYG{o}{();}
+
+		\PYG{c+c1}{// get the data passed in using getIntExtra()}
+		\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{makeText}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,}\PYG{n}{Integer}\PYG{o}{.}\PYG{n+na}{toString}\PYG{o}{(}
+		\PYG{n}{getIntent}\PYG{o}{().}\PYG{n+na}{getIntExtra}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}age1\PYGZdq{}}\PYG{o}{,} \PYG{l+m+mi}{0}\PYG{o}{)),}
+		\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{LENGTH\PYGZus{}SHORT}\PYG{o}{).}\PYG{n+na}{show}\PYG{o}{();}
+
+		\PYG{c+c1}{// get the Bundle object passed in}
+		\PYG{n}{Bundle} \PYG{n}{bundle} \PYG{o}{=} \PYG{n}{getIntent}\PYG{o}{().}\PYG{n+na}{getExtras}\PYG{o}{();}
+
+		\PYG{c+c1}{// get the data using the getString()}
+		\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{makeText}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,} \PYG{n}{bundle}\PYG{o}{.}\PYG{n+na}{getString}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}str2\PYGZdq{}}\PYG{o}{),}
+		\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{LENGTH\PYGZus{}SHORT}\PYG{o}{).}\PYG{n+na}{show}\PYG{o}{();}
+
+		\PYG{c+c1}{// get the data using the getInt() method}
+		\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{makeText}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,}\PYG{n}{Integer}\PYG{o}{.}\PYG{n+na}{toString}\PYG{o}{(}\PYG{n}{bundle}\PYG{o}{.}\PYG{n+na}{getInt}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}age2\PYGZdq{}}\PYG{o}{)),}
+		\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{LENGTH\PYGZus{}SHORT}\PYG{o}{).}\PYG{n+na}{show}\PYG{o}{();}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onClick}\PYG{o}{(}\PYG{n}{View} \PYG{n}{view}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{c+c1}{// use an Intent object to return data}
+
+		\PYG{n}{Intent} \PYG{n}{i} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Intent}\PYG{o}{();}
+
+		\PYG{c+c1}{// use the putExtra() method to return some value}
+		\PYG{n}{i}\PYG{o}{.}\PYG{n+na}{putExtra}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}age3\PYGZdq{}}\PYG{o}{,} \PYG{l+m+mi}{45}\PYG{o}{);}
+
+		\PYG{c+c1}{// use the setData() method to return some value}
+		\PYG{n}{i}\PYG{o}{.}\PYG{n+na}{setData}\PYG{o}{(}\PYG{n}{Uri}\PYG{o}{.}\PYG{n+na}{parse}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}Something passed back to main activity\PYGZdq{}}\PYG{o}{));}
+
+		\PYG{c+c1}{// set the result with OK and the Intent object}
+		\PYG{n}{setResult}\PYG{o}{(}\PYG{n}{RESULT\PYGZus{}OK}\PYG{o}{,} \PYG{n}{i}\PYG{o}{);}
+
+		\PYG{c+c1}{// destroy the current activity}
+		\PYG{n}{finish}\PYG{o}{();}
+	\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

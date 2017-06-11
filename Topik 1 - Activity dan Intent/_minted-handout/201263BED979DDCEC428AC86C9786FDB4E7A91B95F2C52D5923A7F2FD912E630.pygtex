@@ -1,0 +1,26 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}manifest} \PYG{n+na}{xmlns:android=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/apk/res/android\PYGZdq{}}
+	\PYG{n+na}{package=}\PYG{l+s}{\PYGZdq{}com.example.dialog\PYGZdq{}} \PYG{n+nt}{\PYGZgt{}}
+
+	\PYG{n+nt}{\PYGZlt{}application}
+		\PYG{n+na}{android:allowBackup=}\PYG{l+s}{\PYGZdq{}true\PYGZdq{}}
+		\PYG{n+na}{android:icon=}\PYG{l+s}{\PYGZdq{}@mipmap/ic\PYGZus{}launcher\PYGZdq{}}
+		\PYG{n+na}{android:label=}\PYG{l+s}{\PYGZdq{}@string/app\PYGZus{}name\PYGZdq{}}
+		\PYG{n+na}{android:roundIcon=}\PYG{l+s}{\PYGZdq{}@mipmap/ic\PYGZus{}launcher\PYGZus{}round\PYGZdq{}}
+		\PYG{n+na}{android:supportsRtl=}\PYG{l+s}{\PYGZdq{}true\PYGZdq{}}
+		\PYG{n+na}{android:theme=}\PYG{l+s}{\PYGZdq{}@style/AppTheme\PYGZdq{}} \PYG{n+nt}{\PYGZgt{}}
+		\PYG{n+nt}{\PYGZlt{}activity}
+			\PYG{n+na}{android:name=}\PYG{l+s}{\PYGZdq{}.DialogActivity\PYGZdq{}}
+			\PYG{n+na}{android:label=}\PYG{l+s}{\PYGZdq{}@string/app\PYGZus{}name\PYGZdq{}}
+			\PYG{n+na}{android:theme=}\PYG{l+s}{\PYGZdq{}@style/Theme.AppCompat.Dialog\PYGZdq{}} \PYG{n+nt}{\PYGZgt{}}
+			\PYG{n+nt}{\PYGZlt{}intent\PYGZhy{}filter\PYGZgt{}}
+				\PYG{n+nt}{\PYGZlt{}action} \PYG{n+na}{android:name=}\PYG{l+s}{\PYGZdq{}android.intent.action.MAIN\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+
+				\PYG{n+nt}{\PYGZlt{}category} \PYG{n+na}{android:name=}\PYG{l+s}{\PYGZdq{}android.intent.category.LAUNCHER\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+			\PYG{n+nt}{\PYGZlt{}/intent\PYGZhy{}filter\PYGZgt{}}
+		\PYG{n+nt}{\PYGZlt{}/activity\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}/application\PYGZgt{}}
+
+\PYG{n+nt}{\PYGZlt{}/manifest\PYGZgt{}}
+\end{Verbatim}

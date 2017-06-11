@@ -1,0 +1,49 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{com.example.activity101}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{android.support.v7.app.AppCompatActivity}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.os.Bundle}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.util.Log}\PYG{o}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Activity101Activity} \PYG{k+kd}{extends} \PYG{n}{AppCompatActivity} \PYG{o}{\PYGZob{}}
+
+	\PYG{n}{String} \PYG{n}{tag} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}Lifecycle Step\PYGZdq{}}\PYG{o}{;}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{protected} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{Bundle} \PYG{n}{savedInstanceState}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onCreate}\PYG{o}{(}\PYG{n}{savedInstanceState}\PYG{o}{);}
+		\PYG{n}{setContentView}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{layout}\PYG{o}{.}\PYG{n+na}{activity\PYGZus{}activity101}\PYG{o}{);}
+		\PYG{n}{Log}\PYG{o}{.}\PYG{n+na}{d}\PYG{o}{(}\PYG{n}{tag}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}In the OnCreate() event\PYGZdq{}}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onStart}\PYG{o}{()}  \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onStart}\PYG{o}{();}
+		\PYG{n}{Log}\PYG{o}{.}\PYG{n+na}{d}\PYG{o}{(}\PYG{n}{tag}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}In the onStart() event\PYGZdq{}}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onRestart}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onRestart}\PYG{o}{();}
+		\PYG{n}{Log}\PYG{o}{.}\PYG{n+na}{d}\PYG{o}{(}\PYG{n}{tag}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}In the onRestart() event\PYGZdq{}}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onResume}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onResume}\PYG{o}{();}
+		\PYG{n}{Log}\PYG{o}{.}\PYG{n+na}{d}\PYG{o}{(}\PYG{n}{tag}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}In the onResume() event\PYGZdq{}}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onPause}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onPause}\PYG{o}{();}
+		\PYG{n}{Log}\PYG{o}{.}\PYG{n+na}{d}\PYG{o}{(}\PYG{n}{tag}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}In the onPause() event\PYGZdq{}}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onStop}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onStop}\PYG{o}{();}
+		\PYG{n}{Log}\PYG{o}{.}\PYG{n+na}{d}\PYG{o}{(}\PYG{n}{tag}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}In the onStop() event\PYGZdq{}}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onDestroy}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onDestroy}\PYG{o}{();}
+		\PYG{n}{Log}\PYG{o}{.}\PYG{n+na}{d}\PYG{o}{(}\PYG{n}{tag}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}In the onDestroy() event\PYGZdq{}}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

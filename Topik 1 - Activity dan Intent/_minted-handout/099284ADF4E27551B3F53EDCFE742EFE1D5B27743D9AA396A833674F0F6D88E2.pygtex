@@ -1,0 +1,33 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{com.example.usingintent}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{android.app.Activity}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.content.Intent}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.net.Uri}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.os.Bundle}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.view.View}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.widget.EditText}\PYG{o}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{SecondActivity} \PYG{k+kd}{extends} \PYG{n}{Activity} \PYG{o}{\PYGZob{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{protected} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{Bundle} \PYG{n}{savedInstanceState}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onCreate}\PYG{o}{(}\PYG{n}{savedInstanceState}\PYG{o}{);}
+		\PYG{n}{setContentView}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{layout}\PYG{o}{.}\PYG{n+na}{activity\PYGZus{}second}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onClick}\PYG{o}{(}\PYG{n}{View} \PYG{n}{view}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{n}{Intent} \PYG{n}{data} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Intent}\PYG{o}{();}
+
+		\PYG{c+c1}{// get the EditText view}
+		\PYG{n}{EditText} \PYG{n}{txt\PYGZus{}username} \PYG{o}{=} \PYG{o}{(}\PYG{n}{EditText}\PYG{o}{)} \PYG{n}{findViewById}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{id}\PYG{o}{.}\PYG{n+na}{editText}\PYG{o}{);}
+
+		\PYG{c+c1}{// set the data to pass back}
+		\PYG{n}{data}\PYG{o}{.}\PYG{n+na}{setData}\PYG{o}{(}\PYG{n}{Uri}\PYG{o}{.}\PYG{n+na}{parse}\PYG{o}{(}\PYG{n}{txt\PYGZus{}username}\PYG{o}{.}\PYG{n+na}{getText}\PYG{o}{().}\PYG{n+na}{toString}\PYG{o}{()));}
+		\PYG{n}{setResult}\PYG{o}{(}\PYG{n}{RESULT\PYGZus{}OK}\PYG{o}{,} \PYG{n}{data}\PYG{o}{);}
+
+		\PYG{c+c1}{// close the activity}
+		\PYG{n}{finish}\PYG{o}{();}
+	\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

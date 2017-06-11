@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+cp}{\PYGZlt{}?xml version=\PYGZdq{}1.0\PYGZdq{} encoding=\PYGZdq{}utf\PYGZhy{}8\PYGZdq{}?\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}preference\PYGZhy{}headers}
+	\PYG{n+na}{xmlns:android=}\PYG{l+s}{\PYGZdq{}http://schemas.android.com/apk/res/android\PYGZdq{}}\PYG{n+nt}{\PYGZgt{}}
+	\PYG{n+nt}{\PYGZlt{}header} \PYG{n+na}{android:fragment=}
+		\PYG{l+s}{\PYGZdq{}com.example.usingpreferences.AppPreferenceActivity\PYGZdl{}PrefFragment\PYGZdq{}}
+		\PYG{n+na}{android:title=}\PYG{l+s}{\PYGZdq{}Preferences\PYGZdq{}}
+		\PYG{n+na}{android:summary=}\PYG{l+s}{\PYGZdq{}Sample preferences\PYGZdq{}} \PYG{n+nt}{/\PYGZgt{}}
+\PYG{n+nt}{\PYGZlt{}/preference\PYGZhy{}headers\PYGZgt{}}
+\end{Verbatim}

@@ -1,0 +1,57 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{com.example.passingdata}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{android.content.Intent}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.os.Bundle}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.support.v7.app.AppCompatActivity}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.view.View}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.widget.Toast}\PYG{o}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{MainActivity} \PYG{k+kd}{extends} \PYG{n}{AppCompatActivity} \PYG{o}{\PYGZob{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{protected} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{Bundle} \PYG{n}{savedInstanceState}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+	\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onCreate}\PYG{o}{(}\PYG{n}{savedInstanceState}\PYG{o}{);}
+	\PYG{n}{setContentView}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{layout}\PYG{o}{.}\PYG{n+na}{activity\PYGZus{}main}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onClick}\PYG{o}{(}\PYG{n}{View} \PYG{n}{view}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+
+		\PYG{n}{Intent} \PYG{n}{i} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Intent}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}com.example.passingdata.SecondActivity\PYGZdq{}}\PYG{o}{);}
+
+		\PYG{c+c1}{// use putExtra() to add new name/value pairs}
+		\PYG{n}{i}\PYG{o}{.}\PYG{n+na}{putExtra}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}str1\PYGZdq{}}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}This is a string\PYGZdq{}}\PYG{o}{);}
+		\PYG{n}{i}\PYG{o}{.}\PYG{n+na}{putExtra}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}age1\PYGZdq{}}\PYG{o}{,} \PYG{l+m+mi}{25}\PYG{o}{);}
+
+		\PYG{c+c1}{// use a Bundle object to add new name/values pairs}
+		\PYG{n}{Bundle} \PYG{n}{extras} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Bundle}\PYG{o}{();}
+		\PYG{n}{extras}\PYG{o}{.}\PYG{n+na}{putString}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}str2\PYGZdq{}}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}This is another string\PYGZdq{}}\PYG{o}{);}
+		\PYG{n}{extras}\PYG{o}{.}\PYG{n+na}{putInt}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}age2\PYGZdq{}}\PYG{o}{,} \PYG{l+m+mi}{35}\PYG{o}{);}
+
+		\PYG{c+c1}{// attach the Bundle object to the Intent object}
+		\PYG{n}{i}\PYG{o}{.}\PYG{n+na}{putExtras}\PYG{o}{(}\PYG{n}{extras}\PYG{o}{);}
+
+		\PYG{c+c1}{// start the activity to get a result back}
+		\PYG{n}{startActivityForResult}\PYG{o}{(}\PYG{n}{i}\PYG{o}{,} \PYG{l+m+mi}{1}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onActivityResult}\PYG{o}{(}\PYG{k+kt}{int} \PYG{n}{requestCode}\PYG{o}{,} \PYG{k+kt}{int} \PYG{n}{resultCode}\PYG{o}{,} \PYG{n}{Intent} \PYG{n}{data}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{c+c1}{// check if the request code is 1}
+		\PYG{k}{if} \PYG{o}{(}\PYG{n}{requestCode} \PYG{o}{==} \PYG{l+m+mi}{1}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+
+			\PYG{c+c1}{// if the result is OK}
+			\PYG{k}{if} \PYG{o}{(}\PYG{n}{resultCode} \PYG{o}{==} \PYG{n}{RESULT\PYGZus{}OK}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+
+				\PYG{c+c1}{// get the result using getIntExtra()}
+				\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{makeText}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,} \PYG{n}{Integer}\PYG{o}{.}\PYG{n+na}{toString}\PYG{o}{(}
+				\PYG{n}{data}\PYG{o}{.}\PYG{n+na}{getIntExtra}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}age3\PYGZdq{}}\PYG{o}{,} \PYG{l+m+mi}{0}\PYG{o}{)),}
+				\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{LENGTH\PYGZus{}SHORT}\PYG{o}{).}\PYG{n+na}{show}\PYG{o}{();}
+
+				\PYG{c+c1}{// get the result using getData()}
+				\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{makeText}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,} \PYG{n}{data}\PYG{o}{.}\PYG{n+na}{getData}\PYG{o}{().}\PYG{n+na}{toString}\PYG{o}{(),}
+				\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{LENGTH\PYGZus{}SHORT}\PYG{o}{).}\PYG{n+na}{show}\PYG{o}{();}
+			\PYG{o}{\PYGZcb{}}
+		\PYG{o}{\PYGZcb{}}
+	\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

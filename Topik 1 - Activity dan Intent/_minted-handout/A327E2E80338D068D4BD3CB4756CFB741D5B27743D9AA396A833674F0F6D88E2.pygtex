@@ -1,0 +1,36 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{com.example.activity101}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{android.app.Activity}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.app.ProgressDialog}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.os.Bundle}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.os.CountDownTimer}\PYG{o}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{Activity101Activity} \PYG{k+kd}{extends} \PYG{n}{Activity} \PYG{o}{\PYGZob{}}
+
+	\PYG{n}{ProgressDialog} \PYG{n}{progressDialog}\PYG{o}{;}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{protected} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{Bundle} \PYG{n}{savedInstanceState}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onCreate}\PYG{o}{(}\PYG{n}{savedInstanceState}\PYG{o}{);}
+		\PYG{n}{setContentView}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{layout}\PYG{o}{.}\PYG{n+na}{activity\PYGZus{}activity101}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onStart}\PYG{o}{()}
+	\PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onStart}\PYG{o}{();}
+		\PYG{n}{progressDialog} \PYG{o}{=} \PYG{n}{ProgressDialog}\PYG{o}{.}\PYG{n+na}{show}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}Please Wait\PYGZdq{}}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}Processing...\PYGZdq{}}\PYG{o}{,} \PYG{k+kc}{true}\PYG{o}{);}
+		\PYG{n}{CountDownTimer} \PYG{n}{timer} \PYG{o}{=} \PYG{k}{new} \PYG{n}{CountDownTimer}\PYG{o}{(}\PYG{l+m+mi}{3000}\PYG{o}{,} \PYG{l+m+mi}{1000}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+			\PYG{n+nd}{@Override}
+			\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onTick}\PYG{o}{(}\PYG{k+kt}{long} \PYG{n}{millisUntilFinished}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+
+			\PYG{o}{\PYGZcb{}}
+
+			\PYG{n+nd}{@Override}
+				\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onFinish}\PYG{o}{()} \PYG{o}{\PYGZob{}}
+				\PYG{n}{progressDialog}\PYG{o}{.}\PYG{n+na}{dismiss}\PYG{o}{();}
+			\PYG{o}{\PYGZcb{}}
+		\PYG{o}{\PYGZcb{}.}\PYG{n+na}{start}\PYG{o}{();}
+	\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

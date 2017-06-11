@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+m}{06}\PYGZhy{}04 \PYG{l+m}{17}:44:57.703 \PYG{l+m}{21251}\PYGZhy{}21251/com.example.activity101 D/Lifecycle Step: In the onPause\PYG{o}{()} event
+\PYG{l+m}{06}\PYGZhy{}04 \PYG{l+m}{17}:44:57.748 \PYG{l+m}{21251}\PYGZhy{}21251/com.example.activity101 D/Lifecycle Step: In the onStop\PYG{o}{()} event
+\end{Verbatim}

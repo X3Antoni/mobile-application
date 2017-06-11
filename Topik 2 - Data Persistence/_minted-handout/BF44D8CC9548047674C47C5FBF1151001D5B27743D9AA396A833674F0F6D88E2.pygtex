@@ -1,0 +1,41 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{com.example.usingpreferences}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{android.os.Bundle}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.preference.PreferenceActivity}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.preference.PreferenceFragment}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.preference.PreferenceManager}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{java.util.List}\PYG{o}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{AppPreferenceActivity} \PYG{k+kd}{extends} \PYG{n}{PreferenceActivity} \PYG{o}{\PYGZob{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{Bundle} \PYG{n}{savedInstanceState}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onCreate}\PYG{o}{(}\PYG{n}{savedInstanceState}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onBuildHeaders}\PYG{o}{(}\PYG{n}{List}\PYG{o}{\PYGZlt{}}\PYG{n}{Header}\PYG{o}{\PYGZgt{}} \PYG{n}{target}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{n}{loadHeadersFromResource}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{xml}\PYG{o}{.}\PYG{n+na}{prefheaders}\PYG{o}{,} \PYG{n}{target}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{n+nd}{@Override}
+		\PYG{k+kd}{protected} \PYG{k+kt}{boolean} \PYG{n+nf}{isValidFragment}\PYG{o}{(}\PYG{n}{String} \PYG{n}{fragmentName}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{k}{return} \PYG{k+kc}{true}\PYG{o}{;}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kd}{static} \PYG{k+kd}{class} \PYG{n+nc}{PrefFragment} \PYG{k+kd}{extends}   \PYG{n}{PreferenceFragment} \PYG{o}{\PYGZob{}}
+		\PYG{n+nd}{@Override}
+		\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{Bundle} \PYG{n}{savedInstanceState}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+			\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onCreate}\PYG{o}{(}\PYG{n}{savedInstanceState}\PYG{o}{);}
+
+			\PYG{n}{PreferenceManager}\PYG{o}{.}\PYG{n+na}{setDefaultValues}\PYG{o}{(}\PYG{n}{getActivity}\PYG{o}{(),}
+			\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{xml}\PYG{o}{.}\PYG{n+na}{myapppreferences}\PYG{o}{,} \PYG{k+kc}{false}\PYG{o}{);}
+
+			\PYG{c+c1}{// load the preferences from an XML resource}
+			\PYG{n}{addPreferencesFromResource}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{xml}\PYG{o}{.}\PYG{n+na}{myapppreferences}\PYG{o}{);}
+		\PYG{o}{\PYGZcb{}}
+	\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

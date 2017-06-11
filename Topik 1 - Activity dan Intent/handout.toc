@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {1}Tujuan}{1}{section.1}
+\contentsline {section}{\numberline {2}Komponen/Peralatan}{1}{section.2}
+\contentsline {section}{\numberline {3}Dasar Teori}{1}{section.3}
+\contentsline {section}{\numberline {4}Langkah Praktikum}{3}{section.4}
+\contentsline {subsection}{\numberline {4.1}Memahami Siklus Hidup \texttt {Activity}}{3}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Menampilkan Jendela Dialog Menggunakan \texttt {Activity}}{5}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Menampilkan Dialog Perkembangan}{5}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Menghubungkan Antar \texttt {Activity} Menggunakan \texttt {Intent}}{8}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Mendapatkan Hasil dari \texttt {Activity}}{11}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Passing Data Menggunakan Obyek Intent}{14}{subsection.4.6}
