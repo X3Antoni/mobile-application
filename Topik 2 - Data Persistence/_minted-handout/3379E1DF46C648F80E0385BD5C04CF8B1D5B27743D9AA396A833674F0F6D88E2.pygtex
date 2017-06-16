@@ -1,0 +1,115 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{com.example.databases}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{android.content.ContentValues}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.content.Context}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.database.Cursor}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.database.SQLException}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.database.sqlite.SQLiteDatabase}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.database.sqlite.SQLiteOpenHelper}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.util.Log}\PYG{o}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{DBAdapter} \PYG{o}{\PYGZob{}}
+	\PYG{k+kd}{static} \PYG{k+kd}{final} \PYG{n}{String} \PYG{n}{KEY\PYGZus{}ROWID} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}\PYGZus{}id\PYGZdq{}}\PYG{o}{;}
+	\PYG{k+kd}{static} \PYG{k+kd}{final} \PYG{n}{String} \PYG{n}{KEY\PYGZus{}NAME} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}name\PYGZdq{}}\PYG{o}{;}
+	\PYG{k+kd}{static} \PYG{k+kd}{final} \PYG{n}{String} \PYG{n}{KEY\PYGZus{}EMAIL} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}email\PYGZdq{}}\PYG{o}{;}
+	\PYG{k+kd}{static} \PYG{k+kd}{final} \PYG{n}{String} \PYG{n}{TAG} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}DBAdapter\PYGZdq{}}\PYG{o}{;}
+	\PYG{k+kd}{static} \PYG{k+kd}{final} \PYG{n}{String} \PYG{n}{DATABASE\PYGZus{}NAME} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}MyDB\PYGZdq{}}\PYG{o}{;}
+	\PYG{k+kd}{static} \PYG{k+kd}{final} \PYG{n}{String} \PYG{n}{DATABASE\PYGZus{}TABLE} \PYG{o}{=} \PYG{l+s}{\PYGZdq{}contacts\PYGZdq{}}\PYG{o}{;}
+	\PYG{k+kd}{static} \PYG{k+kd}{final} \PYG{k+kt}{int} \PYG{n}{DATABASE\PYGZus{}VERSION} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{o}{;}
+	\PYG{k+kd}{static} \PYG{k+kd}{final} \PYG{n}{String} \PYG{n}{DATABASE\PYGZus{}CREATE} \PYG{o}{=}
+			\PYG{l+s}{\PYGZdq{}create table contacts (\PYGZus{}id integer primary key autoincrement, \PYGZdq{}}
+					\PYG{o}{+} \PYG{l+s}{\PYGZdq{}name text not null, email text not null);\PYGZdq{}}\PYG{o}{;}
+	\PYG{k+kd}{final} \PYG{n}{Context} \PYG{n}{context}\PYG{o}{;}
+	\PYG{n}{DatabaseHelper} \PYG{n}{DBHelper}\PYG{o}{;}
+	\PYG{n}{SQLiteDatabase} \PYG{n}{db}\PYG{o}{;}
+
+	\PYG{k+kd}{public} \PYG{n+nf}{DBAdapter}\PYG{o}{(}\PYG{n}{Context} \PYG{n}{ctx}\PYG{o}{)}
+	\PYG{o}{\PYGZob{}}
+		\PYG{k}{this}\PYG{o}{.}\PYG{n+na}{context} \PYG{o}{=} \PYG{n}{ctx}\PYG{o}{;}
+		\PYG{n}{DBHelper} \PYG{o}{=} \PYG{k}{new} \PYG{n}{DatabaseHelper}\PYG{o}{(}\PYG{n}{context}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{private} \PYG{k+kd}{static} \PYG{k+kd}{class} \PYG{n+nc}{DatabaseHelper} \PYG{k+kd}{extends} \PYG{n}{SQLiteOpenHelper}
+	\PYG{o}{\PYGZob{}}
+		\PYG{n}{DatabaseHelper}\PYG{o}{(}\PYG{n}{Context} \PYG{n}{context}\PYG{o}{)}
+		\PYG{o}{\PYGZob{}}
+			\PYG{k+kd}{super}\PYG{o}{(}\PYG{n}{context}\PYG{o}{,} \PYG{n}{DATABASE\PYGZus{}NAME}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{,} \PYG{n}{DATABASE\PYGZus{}VERSION}\PYG{o}{);}
+		\PYG{o}{\PYGZcb{}}
+		\PYG{n+nd}{@Override}
+		\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{SQLiteDatabase} \PYG{n}{db}\PYG{o}{)}
+		\PYG{o}{\PYGZob{}}
+			\PYG{k}{try} \PYG{o}{\PYGZob{}}
+				\PYG{n}{db}\PYG{o}{.}\PYG{n+na}{execSQL}\PYG{o}{(}\PYG{n}{DATABASE\PYGZus{}CREATE}\PYG{o}{);}
+			\PYG{o}{\PYGZcb{}} \PYG{k}{catch} \PYG{o}{(}\PYG{n}{SQLException} \PYG{n}{e}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+				\PYG{n}{e}\PYG{o}{.}\PYG{n+na}{printStackTrace}\PYG{o}{();}
+			\PYG{o}{\PYGZcb{}}
+		\PYG{o}{\PYGZcb{}}
+		\PYG{n+nd}{@Override}
+		\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onUpgrade}\PYG{o}{(}\PYG{n}{SQLiteDatabase} \PYG{n}{db}\PYG{o}{,} \PYG{k+kt}{int} \PYG{n}{oldVersion}\PYG{o}{,} \PYG{k+kt}{int} \PYG{n}{newVersion}\PYG{o}{)}
+		\PYG{o}{\PYGZob{}}
+			\PYG{n}{Log}\PYG{o}{.}\PYG{n+na}{w}\PYG{o}{(}\PYG{n}{TAG}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}Upgrading database from version \PYGZdq{}} \PYG{o}{+} \PYG{n}{oldVersion} \PYG{o}{+} \PYG{l+s}{\PYGZdq{} to \PYGZdq{}}
+					\PYG{o}{+} \PYG{n}{newVersion} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}, which will destroy all old data\PYGZdq{}}\PYG{o}{);}
+			\PYG{n}{db}\PYG{o}{.}\PYG{n+na}{execSQL}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}DROP TABLE IF EXISTS contacts\PYGZdq{}}\PYG{o}{);}
+			\PYG{n}{onCreate}\PYG{o}{(}\PYG{n}{db}\PYG{o}{);}
+		\PYG{o}{\PYGZcb{}}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{c+c1}{// opens the database}
+	\PYG{k+kd}{public} \PYG{n}{DBAdapter} \PYG{n+nf}{open}\PYG{o}{()} \PYG{k+kd}{throws} \PYG{n}{SQLException}
+	\PYG{o}{\PYGZob{}}
+		\PYG{n}{db} \PYG{o}{=} \PYG{n}{DBHelper}\PYG{o}{.}\PYG{n+na}{getWritableDatabase}\PYG{o}{();}
+		\PYG{k}{return} \PYG{k}{this}\PYG{o}{;}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{c+c1}{// closes the database}
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{close}\PYG{o}{()}
+	\PYG{o}{\PYGZob{}}
+		\PYG{n}{DBHelper}\PYG{o}{.}\PYG{n+na}{close}\PYG{o}{();}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{c+c1}{// insert a contact into the database}
+	\PYG{k+kd}{public} \PYG{k+kt}{long} \PYG{n+nf}{insertContact}\PYG{o}{(}\PYG{n}{String} \PYG{n}{name}\PYG{o}{,} \PYG{n}{String} \PYG{n}{email}\PYG{o}{)}
+	\PYG{o}{\PYGZob{}}
+		\PYG{n}{ContentValues} \PYG{n}{initialValues} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ContentValues}\PYG{o}{();}
+		\PYG{n}{initialValues}\PYG{o}{.}\PYG{n+na}{put}\PYG{o}{(}\PYG{n}{KEY\PYGZus{}NAME}\PYG{o}{,} \PYG{n}{name}\PYG{o}{);}
+		\PYG{n}{initialValues}\PYG{o}{.}\PYG{n+na}{put}\PYG{o}{(}\PYG{n}{KEY\PYGZus{}EMAIL}\PYG{o}{,} \PYG{n}{email}\PYG{o}{);}
+		\PYG{k}{return} \PYG{n}{db}\PYG{o}{.}\PYG{n+na}{insert}\PYG{o}{(}\PYG{n}{DATABASE\PYGZus{}TABLE}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{,} \PYG{n}{initialValues}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{c+c1}{// deletes a particular contact}
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{deleteContact}\PYG{o}{(}\PYG{k+kt}{long} \PYG{n}{rowId}\PYG{o}{)}
+	\PYG{o}{\PYGZob{}}
+		\PYG{k}{return} \PYG{n}{db}\PYG{o}{.}\PYG{n+na}{delete}\PYG{o}{(}\PYG{n}{DATABASE\PYGZus{}TABLE}\PYG{o}{,} \PYG{n}{KEY\PYGZus{}ROWID} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}=\PYGZdq{}} \PYG{o}{+} \PYG{n}{rowId}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{o}{;}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{c+c1}{// retrieves all the contacts}
+	\PYG{k+kd}{public} \PYG{n}{Cursor} \PYG{n+nf}{getAllContacts}\PYG{o}{()}
+	\PYG{o}{\PYGZob{}}
+		\PYG{k}{return} \PYG{n}{db}\PYG{o}{.}\PYG{n+na}{query}\PYG{o}{(}\PYG{n}{DATABASE\PYGZus{}TABLE}\PYG{o}{,} \PYG{k}{new} \PYG{n}{String}\PYG{o}{[]} \PYG{o}{\PYGZob{}}\PYG{n}{KEY\PYGZus{}ROWID}\PYG{o}{,} \PYG{n}{KEY\PYGZus{}NAME}\PYG{o}{,}
+				\PYG{n}{KEY\PYGZus{}EMAIL}\PYG{o}{\PYGZcb{},} \PYG{k+kc}{null}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{c+c1}{// retrieves a particular contact}
+	\PYG{k+kd}{public} \PYG{n}{Cursor} \PYG{n+nf}{getContact}\PYG{o}{(}\PYG{k+kt}{long} \PYG{n}{rowId}\PYG{o}{)} \PYG{k+kd}{throws} \PYG{n}{SQLException}
+	\PYG{o}{\PYGZob{}}
+		\PYG{n}{Cursor} \PYG{n}{mCursor} \PYG{o}{=}
+				\PYG{n}{db}\PYG{o}{.}\PYG{n+na}{query}\PYG{o}{(}\PYG{k+kc}{true}\PYG{o}{,} \PYG{n}{DATABASE\PYGZus{}TABLE}\PYG{o}{,} \PYG{k}{new} \PYG{n}{String}\PYG{o}{[]} \PYG{o}{\PYGZob{}}\PYG{n}{KEY\PYGZus{}ROWID}\PYG{o}{,} \PYG{n}{KEY\PYGZus{}NAME}\PYG{o}{,} \PYG{n}{KEY\PYGZus{}EMAIL}\PYG{o}{\PYGZcb{},}
+						\PYG{n}{KEY\PYGZus{}ROWID} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}=\PYGZdq{}} \PYG{o}{+} \PYG{n}{rowId}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{,}
+						\PYG{k+kc}{null}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{);}
+		\PYG{k}{if} \PYG{o}{(}\PYG{n}{mCursor} \PYG{o}{!=} \PYG{k+kc}{null}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+			\PYG{n}{mCursor}\PYG{o}{.}\PYG{n+na}{moveToFirst}\PYG{o}{();}
+		\PYG{o}{\PYGZcb{}}
+		\PYG{k}{return} \PYG{n}{mCursor}\PYG{o}{;}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{c+c1}{// updates a contact}
+	\PYG{k+kd}{public} \PYG{k+kt}{boolean} \PYG{n+nf}{updateContact}\PYG{o}{(}\PYG{k+kt}{long} \PYG{n}{rowId}\PYG{o}{,} \PYG{n}{String} \PYG{n}{name}\PYG{o}{,} \PYG{n}{String} \PYG{n}{email}\PYG{o}{)}
+	\PYG{o}{\PYGZob{}}
+		\PYG{n}{ContentValues} \PYG{n}{args} \PYG{o}{=} \PYG{k}{new} \PYG{n}{ContentValues}\PYG{o}{();}
+		\PYG{n}{args}\PYG{o}{.}\PYG{n+na}{put}\PYG{o}{(}\PYG{n}{KEY\PYGZus{}NAME}\PYG{o}{,} \PYG{n}{name}\PYG{o}{);}
+		\PYG{n}{args}\PYG{o}{.}\PYG{n+na}{put}\PYG{o}{(}\PYG{n}{KEY\PYGZus{}EMAIL}\PYG{o}{,} \PYG{n}{email}\PYG{o}{);}
+		\PYG{k}{return} \PYG{n}{db}\PYG{o}{.}\PYG{n+na}{update}\PYG{o}{(}\PYG{n}{DATABASE\PYGZus{}TABLE}\PYG{o}{,} \PYG{n}{args}\PYG{o}{,} \PYG{n}{KEY\PYGZus{}ROWID} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}=\PYGZdq{}} \PYG{o}{+} \PYG{n}{rowId}\PYG{o}{,} \PYG{k+kc}{null}\PYG{o}{)} \PYG{o}{\PYGZgt{}} \PYG{l+m+mi}{0}\PYG{o}{;}
+	\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

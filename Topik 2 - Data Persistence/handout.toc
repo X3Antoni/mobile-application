@@ -3,3 +3,11 @@
 \contentsline {section}{\numberline {3}Dasar Teori}{1}{section.3}
 \contentsline {section}{\numberline {4}Langkah Praktikum}{1}{section.4}
 \contentsline {subsection}{\numberline {4.1}Menyimpan Data Menggunakan Obyek \texttt {SharedPreferences}}{1}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Mengambil dan Memodifikasi Preferensi}{6}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Menyimpan Data ke \textit {Internal Storage}}{9}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Membuat kelas Database Helper}{12}{subsection.4.4}
+\contentsline {subsection}{\numberline {4.5}Menambah Kontak ke Dalam Tabel}{15}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Mengambil Semua Kontak Dari Tabel}{15}{subsection.4.6}
+\contentsline {subsection}{\numberline {4.7}Mengambil Kontak dari Tabel}{16}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Update Kontak pada Tabel}{18}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}Menghapus Kontak dalam Tabel}{19}{subsection.4.9}

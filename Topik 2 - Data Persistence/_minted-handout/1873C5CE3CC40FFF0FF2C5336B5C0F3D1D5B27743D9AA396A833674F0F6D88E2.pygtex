@@ -1,0 +1,64 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{com.example.databases}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{android.database.Cursor}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.support.v7.app.AppCompatActivity}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.os.Bundle}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.widget.Toast}\PYG{o}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{MainActivity} \PYG{k+kd}{extends} \PYG{n}{AppCompatActivity} \PYG{o}{\PYGZob{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{protected} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{Bundle} \PYG{n}{savedInstanceState}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onCreate}\PYG{o}{(}\PYG{n}{savedInstanceState}\PYG{o}{);}
+		\PYG{n}{setContentView}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{layout}\PYG{o}{.}\PYG{n+na}{activity\PYGZus{}main}\PYG{o}{);}
+
+		\PYG{n}{DBAdapter} \PYG{n}{db} \PYG{o}{=} \PYG{k}{new} \PYG{n}{DBAdapter}\PYG{o}{(}\PYG{k}{this}\PYG{o}{);}
+		\PYG{c+cm}{/*}
+\PYG{c+cm}{		// add a contact}
+\PYG{c+cm}{		db.open();}
+\PYG{c+cm}{		long id = db.insertContact(\PYGZdq{}Markus Antoni\PYGZdq{}, \PYGZdq{}612013041@student.uksw.edu\PYGZdq{});}
+\PYG{c+cm}{		id = db.insertContact(\PYGZdq{}John Doe\PYGZdq{}, \PYGZdq{}612013099@student.uksw.edu\PYGZdq{});}
+\PYG{c+cm}{		db.close();}
+
+\PYG{c+cm}{		// display all contact}
+\PYG{c+cm}{		db.open();}
+\PYG{c+cm}{		Cursor c = db.getAllContacts();}
+\PYG{c+cm}{		if (c.moveToFirst())}
+\PYG{c+cm}{		\PYGZob{}}
+\PYG{c+cm}{			do \PYGZob{}}
+\PYG{c+cm}{				DisplayContact(c);}
+\PYG{c+cm}{			\PYGZcb{} while (c.moveToNext());}
+\PYG{c+cm}{		\PYGZcb{}}
+\PYG{c+cm}{		db.close();}
+
+\PYG{c+cm}{		// get a contact}
+\PYG{c+cm}{		db.open();}
+\PYG{c+cm}{		Cursor c = db.getContact(2);}
+\PYG{c+cm}{		if (c.moveToFirst())}
+\PYG{c+cm}{			DisplayContact(c);}
+\PYG{c+cm}{		else}
+\PYG{c+cm}{			Toast.makeText(this, \PYGZdq{}No contact found\PYGZdq{}, Toast.LENGTH\PYGZus{}LONG).show();}
+\PYG{c+cm}{		db.close();}
+\PYG{c+cm}{		*/}
+
+		\PYG{c+c1}{// update contact}
+		\PYG{n}{db}\PYG{o}{.}\PYG{n+na}{open}\PYG{o}{();}
+		\PYG{k}{if} \PYG{o}{(}\PYG{n}{db}\PYG{o}{.}\PYG{n+na}{updateContact}\PYG{o}{(}\PYG{l+m+mi}{1}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}Oscar Diggs\PYGZdq{}}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}oscar@oscardiggs.com\PYGZdq{}}\PYG{o}{))}
+			\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{makeText}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}Update successful.\PYGZdq{}}\PYG{o}{,}
+					\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{LENGTH\PYGZus{}LONG}\PYG{o}{).}\PYG{n+na}{show}\PYG{o}{();}
+		\PYG{k}{else}
+			\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{makeText}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}Update failed.\PYGZdq{}}\PYG{o}{,} \PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{LENGTH\PYGZus{}LONG}\PYG{o}{).}\PYG{n+na}{show}\PYG{o}{();}
+		\PYG{n}{db}\PYG{o}{.}\PYG{n+na}{close}\PYG{o}{();}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{DisplayContact}\PYG{o}{(}\PYG{n}{Cursor} \PYG{n}{c}\PYG{o}{)}
+	\PYG{o}{\PYGZob{}}
+		\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{makeText}\PYG{o}{(}\PYG{k}{this}\PYG{o}{,}
+				\PYG{l+s}{\PYGZdq{}id: \PYGZdq{}} \PYG{o}{+} \PYG{n}{c}\PYG{o}{.}\PYG{n+na}{getString}\PYG{o}{(}\PYG{l+m+mi}{0}\PYG{o}{)} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}} \PYG{o}{+}
+						\PYG{l+s}{\PYGZdq{}Name: \PYGZdq{}} \PYG{o}{+} \PYG{n}{c}\PYG{o}{.}\PYG{n+na}{getString}\PYG{o}{(}\PYG{l+m+mi}{1}\PYG{o}{)} \PYG{o}{+} \PYG{l+s}{\PYGZdq{}\PYGZbs{}n\PYGZdq{}} \PYG{o}{+}
+						\PYG{l+s}{\PYGZdq{}Email: \PYGZdq{}} \PYG{o}{+} \PYG{n}{c}\PYG{o}{.}\PYG{n+na}{getString}\PYG{o}{(}\PYG{l+m+mi}{2}\PYG{o}{),}
+				\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{LENGTH\PYGZus{}LONG}\PYG{o}{).}\PYG{n+na}{show}\PYG{o}{();}
+	\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

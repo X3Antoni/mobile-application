@@ -1,0 +1,46 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{package} \PYG{n+nn}{com.example.usingpreferences}\PYG{o}{;}
+
+\PYG{k+kn}{import} \PYG{n+nn}{android.content.Intent}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.content.SharedPreferences}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.support.v7.app.AppCompatActivity}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.os.Bundle}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.view.View}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.widget.EditText}\PYG{o}{;}
+\PYG{k+kn}{import} \PYG{n+nn}{android.widget.Toast}\PYG{o}{;}
+
+\PYG{k+kd}{public} \PYG{k+kd}{class} \PYG{n+nc}{MainActivity} \PYG{k+kd}{extends} \PYG{n}{AppCompatActivity} \PYG{o}{\PYGZob{}}
+
+	\PYG{n+nd}{@Override}
+	\PYG{k+kd}{protected} \PYG{k+kt}{void} \PYG{n+nf}{onCreate}\PYG{o}{(}\PYG{n}{Bundle} \PYG{n}{savedInstanceState}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{k+kd}{super}\PYG{o}{.}\PYG{n+na}{onCreate}\PYG{o}{(}\PYG{n}{savedInstanceState}\PYG{o}{);}
+		\PYG{n}{setContentView}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{layout}\PYG{o}{.}\PYG{n+na}{activity\PYGZus{}main}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onClickDisplay}\PYG{o}{(}\PYG{n}{View} \PYG{n}{view}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{n}{SharedPreferences} \PYG{n}{appPrefs} \PYG{o}{=}
+				\PYG{n}{getSharedPreferences}\PYG{o}{(}
+						\PYG{l+s}{\PYGZdq{}com.example.usingpreferences\PYGZus{}preferences\PYGZdq{}}\PYG{o}{,} \PYG{n}{MODE\PYGZus{}PRIVATE}\PYG{o}{);}
+		\PYG{n}{DisplayText}\PYG{o}{(}\PYG{n}{appPrefs}\PYG{o}{.}\PYG{n+na}{getString}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}editTextPref\PYGZdq{}}\PYG{o}{,} \PYG{l+s}{\PYGZdq{}\PYGZdq{}}\PYG{o}{));}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onClickModify}\PYG{o}{(}\PYG{n}{View} \PYG{n}{view}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{n}{SharedPreferences} \PYG{n}{appPrefs} \PYG{o}{=}
+				\PYG{n}{getSharedPreferences}\PYG{o}{(}
+						\PYG{l+s}{\PYGZdq{}com.example.usingpreferences\PYGZus{}preferences\PYGZdq{}}\PYG{o}{,} \PYG{n}{MODE\PYGZus{}PRIVATE}\PYG{o}{);}
+		\PYG{n}{SharedPreferences}\PYG{o}{.}\PYG{n+na}{Editor} \PYG{n}{prefsEditor} \PYG{o}{=} \PYG{n}{appPrefs}\PYG{o}{.}\PYG{n+na}{edit}\PYG{o}{();}
+		\PYG{n}{prefsEditor}\PYG{o}{.}\PYG{n+na}{putString}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}editTextPref\PYGZdq{}}\PYG{o}{,}
+				\PYG{o}{((}\PYG{n}{EditText}\PYG{o}{)} \PYG{n}{findViewById}\PYG{o}{(}\PYG{n}{R}\PYG{o}{.}\PYG{n+na}{id}\PYG{o}{.}\PYG{n+na}{editText}\PYG{o}{)).}\PYG{n+na}{getText}\PYG{o}{().}\PYG{n+na}{toString}\PYG{o}{());}
+		\PYG{n}{prefsEditor}\PYG{o}{.}\PYG{n+na}{commit}\PYG{o}{();}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{private} \PYG{k+kt}{void} \PYG{n+nf}{DisplayText}\PYG{o}{(}\PYG{n}{String} \PYG{n}{str}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{makeText}\PYG{o}{(}\PYG{n}{getBaseContext}\PYG{o}{(),} \PYG{n}{str}\PYG{o}{,} \PYG{n}{Toast}\PYG{o}{.}\PYG{n+na}{LENGTH\PYGZus{}LONG}\PYG{o}{).}\PYG{n+na}{show}\PYG{o}{();}
+	\PYG{o}{\PYGZcb{}}
+
+	\PYG{k+kd}{public} \PYG{k+kt}{void} \PYG{n+nf}{onClickLoad}\PYG{o}{(}\PYG{n}{View} \PYG{n}{view}\PYG{o}{)} \PYG{o}{\PYGZob{}}
+		\PYG{n}{Intent} \PYG{n}{i} \PYG{o}{=} \PYG{k}{new} \PYG{n}{Intent}\PYG{o}{(}\PYG{l+s}{\PYGZdq{}com.example.AppPreferenceActivity\PYGZdq{}}\PYG{o}{);}
+		\PYG{n}{startActivity}\PYG{o}{(}\PYG{n}{i}\PYG{o}{);}
+	\PYG{o}{\PYGZcb{}}
+\PYG{o}{\PYGZcb{}}
+\end{Verbatim}

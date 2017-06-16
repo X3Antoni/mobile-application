@@ -3,3 +3,11 @@
 \BOOKMARK [1][-]{section.3}{Dasar Teori}{}% 3
 \BOOKMARK [1][-]{section.4}{Langkah Praktikum}{}% 4
 \BOOKMARK [2][-]{subsection.4.1}{Menyimpan Data Menggunakan Obyek SharedPreferences}{section.4}% 5
+\BOOKMARK [2][-]{subsection.4.2}{Mengambil dan Memodifikasi Preferensi}{section.4}% 6
+\BOOKMARK [2][-]{subsection.4.3}{Menyimpan Data ke Internal Storage}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.4}{Membuat kelas Database Helper}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.5}{Menambah Kontak ke Dalam Tabel}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.6}{Mengambil Semua Kontak Dari Tabel}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.7}{Mengambil Kontak dari Tabel}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.8}{Update Kontak pada Tabel}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.9}{Menghapus Kontak dalam Tabel}{section.4}% 13
